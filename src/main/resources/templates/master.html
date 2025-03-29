@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content />
     <meta name="author" content />
-    <title>portfolio</title>
+    <title th:text="'My portfolio - '"+${title}></title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <!-- Custom Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,6 +19,20 @@
 <body>
 <!--NAVIGATION-->
 <div th:insert="menu :: navigation"></div>
+<di th:if="${title == 'Home'}">
+    <div th:insert="home::home"></div>
+</di>
+<di th:if="${title == 'Resume'}">
+    <div th:insert="resume::resume"></div>
+</di>
+<di th:if="${title == 'Projects'}">
+    <div th:insert="projects::projects"></div>
+</di>
+<di th:if="${title == 'Contact'}">
+    <div th:insert="contact::contact"></div>
+</di>
+
+
 
 <!--FOOTER-->
 <div th:insert="footer :: footer"></div>
